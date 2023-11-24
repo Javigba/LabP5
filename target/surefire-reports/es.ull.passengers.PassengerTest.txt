@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: es.ull.passengers.PassengerTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in es.ull.passengers.PassengerTest
+testGetName  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Juan> but was: <John Doe>
+	at es.ull.passengers.PassengerTest.testGetName(passengers_test.java:26)
+
