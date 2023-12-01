@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.vogella.algorithms.sort.quicksort</groupId>
-  <artifactId>quicksort</artifactId>
+  <artifactId>LabP5</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>quicksort</name>
+  <name>LabP5</name>
   <url>http://maven.apache.org</url>
 
   <properties>
