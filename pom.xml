@@ -2,7 +2,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  
   <groupId>de.vogella.algorithms.sort.LabP5</groupId>
   <artifactId>LabP5</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -24,7 +23,7 @@
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <sonar.language>java</sonar.language>
   </properties>
-  
+
   <reporting>
     <plugins>
       <plugin>
@@ -33,47 +32,60 @@
         <version>2.0</version>
       </plugin>
     </plugins>
-  </reporting> 
- 
+  </reporting>
+
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.2</version>
+          </dependency>
+        </dependencies>
       </plugin>
+
+      <!-- Plugin Metrics -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version> <!-- Usa la versión más reciente disponible -->
-        <configuration>
-          <source>1.8</source> <!-- Ajusta a tu versión de Java -->
-          <target>1.8</target> <!-- Ajusta a tu versión de Java -->
-        </configuration>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>metrics</artifactId>
+        <version>4.0.0</version>
       </plugin>
+
+      <!-- Plugin Additional Metrics -->
       <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${jacoco.version}</version>
-        <executions>
-          <execution>
-            <id>jacoco-initialize</id>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>jacoco-site</id>
-            <phase>package</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>additional-metrics</artifactId>
+        <version>1.0.0</version>
+      </plugin>
+
+      <!-- Plugin Build History Metrics -->
+      <plugin>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>build-history-metrics</artifactId>
+        <version>2.0.0</version>
+      </plugin>
+
+      <!-- Plugin OWASP Dependency-Check -->
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-plugin</artifactId>
+        <version>6.0.2</version>
+      </plugin>
+
+      <!-- Plugin Plot -->
+      <plugin>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plot</artifactId>
+        <version>2.0.3</version>
       </plugin>
     </plugins>
   </build>
 
-  <dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -84,50 +96,15 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.7.2</version> <!-- Usa la versión más reciente disponible -->
+      <version>5.7.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.7.2</version> <!-- Usa la misma versión que la API -->
+      <version>5.7.2</version>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>junit</artifactId>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>metrics</artifactId>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>additional-metrics</artifactId>
-    <version>67.vcb_823d3999a_2</version>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>build-history-metrics-plugin</artifactId>
-    <version>112.v476124de7dfc</version>
-</dependency>
-
-             <dependency>
-                      <groupId>org.jenkins-ci.plugins</groupId>
-                      <artifactId>dependency-check-jenkins-plugin</artifactId>
-                      <version>5.4.3</version>
-                  </dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>plot</artifactId>
-    <version>2.1.12</version>
-</dependency>
   </dependencies>
-  </dependencyManagement>
 </project>
 
