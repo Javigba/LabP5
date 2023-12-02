@@ -76,11 +76,6 @@
 
   
   <dependencies>
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>additional-metrics</artifactId>
-    <version>67.vcb_823d3999a_2</version>
-</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
