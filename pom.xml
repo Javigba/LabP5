@@ -85,7 +85,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>junit</artifactId>
-      <version>1.51</version> <!-- Reemplaza con la versión que necesites -->
+      <version>4.13.1</version> <!-- Reemplaza con la versión que necesites -->
     </dependency>
 
     <dependency>
