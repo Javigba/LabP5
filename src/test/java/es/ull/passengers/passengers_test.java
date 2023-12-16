@@ -76,6 +76,7 @@ class PassengerTest {
     void testLeaveFlight() {
         Flight flight = new Flight("AB123", 100);
         passenger.joinFlight(flight);
+        passenger.joinFlight(null);
         passenger.leaveFlight();
 
         assertNull(passenger.getFlight());
