@@ -4,7 +4,7 @@
  */
 
 package es.ull.passengers;
-
+import es.ull.passengers.Passenger;
 import es.ull.flights.Flight;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
