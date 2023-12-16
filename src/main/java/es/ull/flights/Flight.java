@@ -1,3 +1,8 @@
+/**
+ * @file Flight.java
+ * @brief Contiene la implementación de la clase Flight.
+ */
+
 /*
  * ========================================================================
  *
@@ -18,6 +23,7 @@
  *
  * ========================================================================
  */
+
 package es.ull.flights;
 
 import java.util.HashSet;
@@ -27,15 +33,24 @@ import java.util.regex.Pattern;
 
 import es.ull.passengers.Passenger;
 
+/**
+ * @brief Clase que representa un vuelo y gestiona la información relacionada.
+ */
 public class Flight {
 
-    private String flightNumber;
-    private int seats;
-    private Set<Passenger> passengers = new HashSet<>();
+    private String flightNumber; /**< Número de vuelo. */
+    private int seats; /**< Número total de asientos en el vuelo. */
+    private Set<Passenger> passengers = new HashSet<>(); /**< Conjunto de pasajeros en el vuelo. */
 
-    private static String flightNumberRegex = "^[A-Z]{2}\\d{3,4}$";
-    private static Pattern pattern = Pattern.compile(flightNumberRegex);
+    private static String flightNumberRegex = "^[A-Z]{2}\\d{3,4}$"; /**< Expresión regular para validar el formato del número de vuelo. */
+    private static Pattern pattern = Pattern.compile(flightNumberRegex); /**< Patrón para la validación del número de vuelo. */
 
+    /**
+     * @brief Constructor de la clase Flight.
+     * @param flightNumber Número de vuelo.
+     * @param seats Número total de asientos en el vuelo.
+     * @throws RuntimeException Si el número de vuelo no cumple con el formato especificado.
+     */
     public Flight(String flightNumber, int seats) {
         Matcher matcher = pattern.matcher(flightNumber);
         if (!matcher.matches()) {
@@ -45,14 +60,28 @@ public class Flight {
         this.seats = seats;
     }
 
+    /**
+     * @brief Obtiene el número de vuelo.
+     * @return Número de vuelo.
+     */
     public String getFlightNumber() {
         return flightNumber;
     }
 
+    /**
+     * @brief Obtiene el número de pasajeros en el vuelo.
+     * @return Número de pasajeros en el vuelo.
+     */
     public int getNumberOfPassengers() {
         return passengers.size();
     }
 
+    /**
+     * @brief Añade un pasajero al vuelo.
+     * @param passenger Pasajero a añadir.
+     * @return true si el pasajero fue añadido con éxito, false si no hay suficientes asientos.
+     * @throws RuntimeException Si no hay suficientes asientos para el vuelo.
+     */
     public boolean addPassenger(Passenger passenger) {
         if (getNumberOfPassengers() >= seats) {
             throw new RuntimeException("Not enough seats for flight " + getFlightNumber());
@@ -61,8 +90,14 @@ public class Flight {
         return passengers.add(passenger);
     }
 
+    /**
+     * @brief Elimina un pasajero del vuelo.
+     * @param passenger Pasajero a eliminar.
+     * @return true si el pasajero fue eliminado con éxito, false si no estaba presente.
+     */
     public boolean removePassenger(Passenger passenger) {
         passenger.setFlight(null);
         return passengers.remove(passenger);
     }
 }
+
