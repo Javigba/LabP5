@@ -51,6 +51,23 @@
         </configuration>
       </plugin>
       <plugin>
+              <groupId>org.owasp</groupId>
+              <artifactId>dependency-check-maven</artifactId>
+              <version>9.0.5</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>check</goal>
+                      </goals>
+                  </execution>
+              </executions>
+            </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.21.2</version>
+      </plugin>
+      <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
@@ -76,40 +93,7 @@
 
   
   <dependencies>
-    <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>junit</artifactId>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>metrics</artifactId>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>additional-metrics</artifactId>
-    <version>67.vcb_823d3999a_2</version>
-</dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>build-history-metrics-plugin</artifactId>
-    <version>112.v476124de7dfc</version>
-</dependency>
-
-             <dependency>
-                      <groupId>org.jenkins-ci.plugins</groupId>
-                      <artifactId>dependency-check-jenkins-plugin</artifactId>
-                      <version>5.4.3</version>
-                  </dependency>
-
-        <dependency>
-    <groupId>org.jenkins-ci.plugins</groupId>
-    <artifactId>plot</artifactId>
-    <version>2.1.12</version>
-</dependency>
-
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
