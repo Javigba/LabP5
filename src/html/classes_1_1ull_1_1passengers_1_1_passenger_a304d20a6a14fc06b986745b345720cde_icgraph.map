@@ -1,0 +1,5 @@
+<map id="es.ull.passengers.Passenger.setFlight" name="es.ull.passengers.Passenger.setFlight">
+<area shape="rect" id="Node000001" title="Establece el vuelo asociado al pasajero." alt="" coords="266,5,476,46"/>
+<area shape="rect" id="Node000002" href="$classes_1_1ull_1_1passengers_1_1_passenger.html#ab502f5a4d9dde76595f7d1781683b08e" title="Asocia al pasajero con un vuelo y actualiza la información." alt="" coords="5,5,218,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,28,218,28,218,23,250,23"/>
+</map>
